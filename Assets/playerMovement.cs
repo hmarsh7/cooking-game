@@ -3,45 +3,51 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed
-    public float rotationSpeed = 10f; // Rotation speed for smooth turning
+    public float moveSpeed = 5f;          // Movement speed
+    public float rotationSpeed = 10f;     // Rotation speed for smooth turning
 
     private CharacterController controller;
-    private Animator animator;  // Reference to the Animator component
+    private Animator animator;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>(); // Get the Animator component
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // Get input for movement
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        // Create movement vector
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        // Get camera directions
+        Vector3 cameraForward = Camera.main.transform.forward;
+        Vector3 cameraRight = Camera.main.transform.right;
 
-        // Check if there's any movement  this is so hard
+        // Ignore vertical tilt
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // Combine input with camera direction
+        Vector3 movement = cameraForward * moveVertical + cameraRight * moveHorizontal;
+
         if (movement.magnitude > 0.1f)
         {
-            // Move the character
+            // Move character
             controller.Move(movement.normalized * moveSpeed * Time.deltaTime);
 
-            // Calculate the target rotation based on movement direction
+            // Rotate to face movement direction
             Quaternion toRotation = Quaternion.LookRotation(movement.normalized, Vector3.up);
-
-            // Smoothly rotate the character to face the movement direction
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
-            // Set the "Speed" parameter in the Animator to indicate movement
-            animator.SetFloat("Speed", movement.magnitude);  // This will trigger the walking animation
+            // Play walking animation
+            animator.SetFloat("Speed", movement.magnitude);
         }
         else
         {
-            // If no movement, set Speed to 0, which will trigger the idle animation
+            // Idle animation
             animator.SetFloat("Speed", 0);
         }
     }
