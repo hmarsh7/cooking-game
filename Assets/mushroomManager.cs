@@ -13,11 +13,15 @@ public class MushroomManager : MonoBehaviour
 
     void SpawnAndMoveMushroom()
     {
+        // Spawn the mushroom at the spawn point
         GameObject mushroom = Instantiate(mushroomPrefab, spawnPoint.position, Quaternion.identity);
-        // Rotate the mushroom 90 degrees to the left (negative Y axis)
-        mushroom.transform.Rotate(0f, 90f, 0f);
 
+        // Optional: Rotate it 90 degrees left
+        mushroom.transform.Rotate(0f, -90f, 0f);
+
+        // Add and configure the movement script
         MushroomMovement movement = mushroom.AddComponent<MushroomMovement>();
-        movement.targetPoint = waitPoint.position;
+        movement.waitPoint = waitPoint.position;
+        movement.SetSpawnPoint(spawnPoint.position); // Tell it where to return on click
     }
 }
