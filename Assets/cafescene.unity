@@ -1453,7 +1453,23 @@ PrefabInstance:
       value: canelle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1018240028041858789, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -6709486361007051462, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 514088060352971607, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 8481078298830866102, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -7074316966639213975, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -8413830418940647221, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 4732848184924610005, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 4366717340383929870, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 8886975018993660243, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 7814744171784971524, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 7734258600811701121, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -7059212615059256865, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 5148817236446094103, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: 6507901977716847365, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -8961359253771211100, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
+    - {fileID: -8738963636615357944, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -9041425179209139440, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
