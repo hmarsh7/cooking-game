@@ -2,53 +2,54 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-    public Camera defaultCamera;
-    public Camera followCamera;
-    public Transform player;
-    public Vector3 followOffset = new Vector3(0, 1.8f, -3f);  // Back and up
+    public Camera mainCamera;     // The default main camera
+    public Camera zoomCamera;     // The zoomed-in camera
 
-    private bool usingFollowCam = false;
+    private bool isZoomedIn = false;
 
     void Start()
     {
-        defaultCamera.enabled = true;
-        followCamera.enabled = false;
+        // Start with main camera enabled, zoom camera disabled
+        mainCamera.enabled = true;
+        zoomCamera.enabled = false;
+
+        // Make sure main camera is tagged correctly
+        mainCamera.tag = "MainCamera";
+        zoomCamera.tag = "Untagged";
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !usingFollowCam)
+        if (Input.GetKeyDown(KeyCode.Z) && !isZoomedIn)
         {
-            SwitchToFollowCam();
+            SwitchToZoomCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && usingFollowCam)
+        if (Input.GetKeyDown(KeyCode.F) && isZoomedIn)
         {
-            SwitchToDefaultCam();
-        }
-
-        if (usingFollowCam && player != null)
-        {
-            // World-space offset: always behind the player regardless of rotation
-            Vector3 offsetPosition = player.position + player.rotation * followOffset;
-            followCamera.transform.position = offsetPosition;
-
-            // Optional: look at the player's eye level
-            followCamera.transform.LookAt(player.position + Vector3.up * 1.5f);
+            SwitchToMainCamera();
         }
     }
 
-    private void SwitchToFollowCam()
+    void SwitchToZoomCamera()
     {
-        usingFollowCam = true;
-        defaultCamera.enabled = false;
-        followCamera.enabled = true;
+        isZoomedIn = true;
+
+        mainCamera.enabled = false;
+        zoomCamera.enabled = true;
+
+        mainCamera.tag = "Untagged";
+        zoomCamera.tag = "MainCamera";
     }
 
-    private void SwitchToDefaultCam()
+    void SwitchToMainCamera()
     {
-        usingFollowCam = false;
-        defaultCamera.enabled = true;
-        followCamera.enabled = false;
+        isZoomedIn = false;
+
+        zoomCamera.enabled = false;
+        mainCamera.enabled = true;
+
+        zoomCamera.tag = "Untagged";
+        mainCamera.tag = "MainCamera";
     }
 }
