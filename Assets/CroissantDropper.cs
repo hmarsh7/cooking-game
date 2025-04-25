@@ -2,28 +2,29 @@ using UnityEngine;
 
 public class CroissantDropper : MonoBehaviour
 {
-    public Transform holdPoint;      // Where the croissant is held
-    public Transform dropPoint;      // Where it should be dropped
+    public Transform holdPoint;            // Where the croissant is held
+    public Transform croissantDropPoint;   // Where the croissant should be moved to
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Mage collided with: " + other.name + " | Tag: " + other.tag);
+
         if (other.CompareTag("DropZone"))
         {
-            Debug.Log("Mage entered the DropZone!");
+            Debug.Log("Mage entered the DropZone");
 
-            // Make sure the player is holding something
             if (holdPoint.childCount > 0)
             {
-                // Get the croissant
+                // Get the held croissant
                 Transform croissant = holdPoint.GetChild(0);
 
                 // Unparent it
                 croissant.SetParent(null);
 
-                // Move it to the drop point
-                croissant.position = dropPoint.position;
+                // Move to croissantDropPoint (NOT where the trigger is)
+                croissant.position = croissantDropPoint.position;
 
-                // Optional: Enable physics if needed
+                // Enable physics if it has a Rigidbody
                 Rigidbody rb = croissant.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
@@ -31,11 +32,11 @@ public class CroissantDropper : MonoBehaviour
                     rb.useGravity = true;
                 }
 
-                Debug.Log("Croissant dropped at the drop point!");
+                Debug.Log("Croissant dropped at croissantDropPoint");
             }
             else
             {
-                Debug.Log("Mage entered drop zone but isn't holding a croissant.");
+                Debug.Log("Mage entered DropZone but is not holding a croissant");
             }
         }
     }
