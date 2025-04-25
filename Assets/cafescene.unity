@@ -1902,6 +1902,26 @@ CapsuleCollider:
   m_Height: 0.003893116
   m_Direction: 1
   m_Center: {x: 0, y: -0.0002132705, z: 0.0015364806}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+--- !u!114 &1354166612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354166606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892f993a702146b4c9c06542aa0fbcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdPoint: {fileID: 1499183147}
+  croissantDropPoint: {fileID: 0}
+=======
+>>>>>>> 913b213ad447e8f013ad229ae7d9d0ae1460cf04
+>>>>>>> Stashed changes
 --- !u!1001 &1411652916
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2416,7 +2436,7 @@ PrefabInstance:
     - target: {fileID: -2947538861075970057, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8a9638ac5c01a496698ee549b14b7e22, type: 2}
+      objectReference: {fileID: 2100000, guid: bceedfd30cf634f3a8f9e269dbdc8e7d, type: 2}
     - target: {fileID: -2188347041372487810, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2440,7 +2460,7 @@ PrefabInstance:
     - target: {fileID: 1738776581880846596, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8a9638ac5c01a496698ee549b14b7e22, type: 2}
+      objectReference: {fileID: 2100000, guid: bceedfd30cf634f3a8f9e269dbdc8e7d, type: 2}
     - target: {fileID: 6124318214771875837, guid: 1bd2fb1a6914cfb43af069e4908b3962, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
