@@ -8,15 +8,29 @@ public class MushroomManager : MonoBehaviour
 
     void Start()
     {
-        SpawnAndMoveMushroom();
+        if (StartGameManager.gameStarted)
+        {
+            SpawnAndMoveMushroom();
+        }
     }
+
+    void Update()
+    {
+        if (StartGameManager.gameStarted && !mushroomSpawned)
+        {
+            SpawnAndMoveMushroom();
+            mushroomSpawned = true;
+        }
+    }
+
+    bool mushroomSpawned = false; // Track if we've spawned the mushroom already
 
     void SpawnAndMoveMushroom()
     {
         // Spawn the mushroom at the spawn point
         GameObject mushroom = Instantiate(mushroomPrefab, spawnPoint.position, Quaternion.identity);
 
-        // Rotate it to face the wait point (XZ only — keeps upright)
+        // Rotate it to face the wait point (XZ only â€” keeps upright)
         Vector3 lookAtPosition = new Vector3(waitPoint.position.x, mushroom.transform.position.y, waitPoint.position.z);
         mushroom.transform.LookAt(lookAtPosition);
 
