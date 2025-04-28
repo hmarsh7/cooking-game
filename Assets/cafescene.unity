@@ -2993,7 +2993,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b727a868f35791a4e9d9c81d3426fd91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223856926}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b727a868f35791a4e9d9c81d3426fd91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223856927}
   m_SourcePrefab: {fileID: 100100000, guid: b727a868f35791a4e9d9c81d3426fd91, type: 3}
 --- !u!1001 &884613540
 PrefabInstance:
@@ -3659,8 +3665,8 @@ MonoBehaviour:
   menuRawImage: {fileID: 810751198}
   textures:
   - {fileID: 2800000, guid: aa58db82d99080e4e9f943cf48c59dd8, type: 3}
-  - {fileID: 2800000, guid: 6c1355c53498728439af420c1f5f0599, type: 3}
-  - {fileID: 2800000, guid: aa58db82d99080e4e9f943cf48c59dd8, type: 3}
+  - {fileID: 2800000, guid: d81990041bd3afc4b84a588da42f2415, type: 3}
+  - {fileID: 2800000, guid: c9f71438f9f9f2644b5d56e390534ef7, type: 3}
 --- !u!65 &1123180302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4098,6 +4104,46 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f430970f84054daf8c3658bf8dc1ae2, type: 3}
+--- !u!1 &1223856922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b727a868f35791a4e9d9c81d3426fd91, type: 3}
+  m_PrefabInstance: {fileID: 846525586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1223856926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223856922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4abded30873384ebffd25579056614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cupcakePrefab: {fileID: 1223856922}
+  holdPoint: {fileID: 1499183147}
+--- !u!65 &1223856927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223856922}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0036172536, y: 0.0036172525, z: 0.0051023583}
+  m_Center: {x: -0.000000010011717, y: 1.16415294e-10, z: 0.0024958772}
 --- !u!4 &1226370153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c14f2075285b54845b767b0b446e78bc, type: 3}
@@ -5500,13 +5546,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 33a1e9e9a62965141bba9fb6a4cf4d71, type: 3}
       propertyPath: m_Name
-      value: pie_cherry_cut
+      value: cherrypie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33a1e9e9a62965141bba9fb6a4cf4d71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1485779338}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33a1e9e9a62965141bba9fb6a4cf4d71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1485779339}
   m_SourcePrefab: {fileID: 100100000, guid: 33a1e9e9a62965141bba9fb6a4cf4d71, type: 3}
+--- !u!1 &1485779334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 33a1e9e9a62965141bba9fb6a4cf4d71, type: 3}
+  m_PrefabInstance: {fileID: 1411652916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1485779338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485779334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040bf2fd7581a4341b8fca69c1026f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cherrypiePrefab: {fileID: 1485779334}
+  holdPoint: {fileID: 1499183147}
+--- !u!65 &1485779339
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485779334}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.011612918, y: 0.0106163, z: 0.0031528187}
+  m_Center: {x: 0, y: -0.00039909914, z: 0.0015764093}
 --- !u!1 &1499183146
 GameObject:
   m_ObjectHideFlags: 0
@@ -5964,7 +6056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mageHoldPoint: {fileID: 1499183147}
-  mageScoreTracker: {fileID: 0}
+  mageScoreTracker: {fileID: 734909751}
 --- !u!65 &1607733356
 BoxCollider:
   m_ObjectHideFlags: 0
