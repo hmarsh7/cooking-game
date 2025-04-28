@@ -6140,7 +6140,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 605b812c829f71c48b3aeb0d4dad58cc, type: 3}
   - {fileID: 2800000, guid: 4ab603e349d286e429e205e580e8c07b, type: 3}
   - {fileID: 2800000, guid: 68f06e2df700c214cb1afbc7b6165c7e, type: 3}
-  imageDisplayTime: 3
+  - {fileID: 2800000, guid: 07b8db7a48fac3f43b3feedfc80e5268, type: 3}
+  - {fileID: 2800000, guid: 4160e1cfd302bd44f9953b84ec81c27c, type: 3}
+  imageDisplayTime: 4
   startScreen: {fileID: 1948976488}
 --- !u!4 &1602446799
 Transform:
@@ -8501,7 +8503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 15
+  m_ScaleFactor: 13
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
