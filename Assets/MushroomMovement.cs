@@ -5,6 +5,7 @@ public class MushroomMovement : MonoBehaviour
     public Vector3 waitPoint;
     public Vector3 spawnPoint;
     public float moveSpeed = 3.5f;
+    public MushroomManager manager; // <-- ADD this
 
     private enum MushroomState { MovingToWait, Waiting, ReturningToSpawn }
     private MushroomState currentState = MushroomState.MovingToWait;
@@ -18,7 +19,7 @@ public class MushroomMovement : MonoBehaviour
                 break;
 
             case MushroomState.ReturningToSpawn:
-                MoveToPoint(spawnPoint, MushroomState.Waiting, "Mushroom returned to spawn point.");
+                MoveToPoint(spawnPoint, MushroomState.Waiting, "Mushroom returned to spawn point.", true); // true to signal finished
                 break;
 
             case MushroomState.Waiting:
@@ -27,9 +28,8 @@ public class MushroomMovement : MonoBehaviour
         }
     }
 
-    private void MoveToPoint(Vector3 target, MushroomState nextState, string debugMessage)
+    private void MoveToPoint(Vector3 target, MushroomState nextState, string debugMessage, bool notifyManager = false)
     {
-        // Only move along XZ (keep current Y)
         Vector3 currentXZ = new Vector3(transform.position.x, 0, transform.position.z);
         Vector3 targetXZ = new Vector3(target.x, 0, target.z);
         float flatDistance = Vector3.Distance(currentXZ, targetXZ);
@@ -45,6 +45,11 @@ public class MushroomMovement : MonoBehaviour
             transform.position = new Vector3(target.x, transform.position.y, target.z);
             currentState = nextState;
             Debug.Log(debugMessage);
+
+            if (notifyManager && manager != null)
+            {
+                manager.MushroomFinishedReturn(); // <-- Notify the manager
+            }
         }
     }
 
@@ -58,7 +63,6 @@ public class MushroomMovement : MonoBehaviour
     {
         if (currentState == MushroomState.Waiting)
         {
-            // Turn to face the spawn point before walking back
             Vector3 lookAtSpawn = new Vector3(spawnPoint.x, transform.position.y, spawnPoint.z);
             transform.LookAt(lookAtSpawn);
 
