@@ -782,7 +782,13 @@ PrefabInstance:
     - {fileID: 65702495048144492, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
     - {fileID: -8700617353114198275, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123180301}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1123180302}
   m_SourcePrefab: {fileID: 100100000, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
 --- !u!1001 &264106378
 PrefabInstance:
@@ -3633,6 +3639,49 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1576263548}
   m_SourcePrefab: {fileID: 100100000, guid: 7ab45078188d8f44490e5cfe33646502, type: 3}
+--- !u!1 &1123180299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1726d1c4359cf40298e214ca2c7e6731, type: 3}
+  m_PrefabInstance: {fileID: 231356157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1123180301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123180299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722209d3c2de7a44a844303dfa0ec10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuRawImage: {fileID: 810751198}
+  textures:
+  - {fileID: 2800000, guid: aa58db82d99080e4e9f943cf48c59dd8, type: 3}
+  - {fileID: 2800000, guid: 6c1355c53498728439af420c1f5f0599, type: 3}
+  - {fileID: 2800000, guid: aa58db82d99080e4e9f943cf48c59dd8, type: 3}
+--- !u!65 &1123180302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123180299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1133205979
 GameObject:
   m_ObjectHideFlags: 0
