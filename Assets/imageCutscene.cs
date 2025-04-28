@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Only needed if you want to load next scene after
+using System.Collections; // Needed for Coroutine
 
 public class ImageCutscene : MonoBehaviour
 {
-    public RawImage displayImage; // Assign your RawImage UI element
-    public Texture[] cutsceneTextures; // Assign your PNG images (Textures)
-    public float imageDisplayTime = 2f; // How long each image stays on screen
+    public RawImage displayImage;       // RawImage that shows the cutscene
+    public Texture[] cutsceneTextures;  // PNG Textures for cutscene
+    public float imageDisplayTime = 2f; // How long to display each image
+    public GameObject startScreen;      // StartScreen to show after cutscene
 
     private int currentImageIndex = 0;
     private float timer = 0f;
@@ -16,6 +17,11 @@ public class ImageCutscene : MonoBehaviour
         if (cutsceneTextures.Length > 0 && displayImage != null)
         {
             displayImage.texture = cutsceneTextures[0];
+        }
+
+        if (startScreen != null)
+        {
+            startScreen.SetActive(false); // Hide StartScreen at beginning
         }
     }
 
@@ -37,10 +43,15 @@ public class ImageCutscene : MonoBehaviour
             }
             else
             {
-                Debug.Log("[Cutscene] Cutscene finished.");
-                // Optional: Load next scene
-                // SceneManager.LoadScene("YourNextSceneName");
-                displayImage.gameObject.SetActive(false); // Hide image if done
+                Debug.Log("[ImageCutscene] Cutscene finished.");
+
+                displayImage.gameObject.SetActive(false); // Hide the RawImage
+                if (startScreen != null)
+                {
+                    startScreen.SetActive(true); // Show StartScreen
+                }
+
+                // DO NOT touch gameStarted here! Player must click Play manually.
             }
         }
     }

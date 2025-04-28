@@ -8,20 +8,25 @@ public class StartGameManager : MonoBehaviour
 
     public float fadeDuration = 1.0f;
 
-    public static bool gameStarted = false;
+    public static bool gameStarted = false; //Important: gameStarted starts as false
 
-    void Start() {
+    void Start()
+    {
         canvasGroup = StartScreen.GetComponent<CanvasGroup>();
     }
-    public void StartGame() {
-       StartCoroutine(FadeOutStartScreen());
+
+    public void StartGame()
+    {
+        StartCoroutine(FadeOutStartScreen());
     }
 
-    IEnumerator FadeOutStartScreen() {
+    IEnumerator FadeOutStartScreen()
+    {
         float elapsed = 0f;
         float startAlpha = canvasGroup.alpha;
 
-        while (elapsed < fadeDuration) {
+        while (elapsed < fadeDuration)
+        {
             elapsed += Time.deltaTime;
             canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, elapsed / fadeDuration);
             yield return null;
@@ -30,6 +35,7 @@ public class StartGameManager : MonoBehaviour
         canvasGroup.alpha = 0f;
         StartScreen.SetActive(false);
 
-        gameStarted = true;
+        gameStarted = true; // Only now does the game actually start
+        Debug.Log("[StartGameManager] Game Started!");
     }
 }
